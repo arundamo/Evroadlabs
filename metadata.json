@@ -1,0 +1,6 @@
+{
+  "name": "EV Road Lab - EV Accessories & Charging Affiliate Hub",
+  "description": "High-converting Amazon affiliate hub and buyer guide resource for electric vehicle accessories, portable chargers, cable organizers, and road trip gear.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
