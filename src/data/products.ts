@@ -1,6 +1,6 @@
 import { ProductGuide } from '../types';
 
-export const AFFILIATE_TAG = 'evroadlab-20';
+export const AFFILIATE_TAG = 'evrangecalc-20';
 
 export const CATEGORIES = [
   { id: 'all', label: 'All Gear & Guides', icon: 'Sparkles' },
