@@ -50,8 +50,12 @@ import {
 } from 'lucide-react';
 
 export default function App() {
-  // Simple path-based routing — no external router dependency needed
-  if (window.location.pathname === '/guides/portable-level-2-chargers-winter') {
+  // Simple path-based routing — pathname is stable for a full page load; the
+  // useState initializer captures it once so the check is not repeated on every
+  // render and avoids reading window globals in the render body.
+  const [pathname] = useState(() => window.location.pathname);
+
+  if (pathname === '/guides/portable-level-2-chargers-winter') {
     return (
       <Suspense fallback={<div className="min-h-screen bg-slate-50 flex items-center justify-center text-slate-500 text-sm">Loading guide…</div>}>
         <WinterChargersGuide />
