@@ -1,4 +1,6 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, lazy, Suspense } from 'react';
+
+const WinterChargersGuide = lazy(() => import('./pages/WinterChargersGuide'));
 import { 
   Navbar 
 } from './components/Navbar';
@@ -48,6 +50,15 @@ import {
 } from 'lucide-react';
 
 export default function App() {
+  // Simple path-based routing — no external router dependency needed
+  if (window.location.pathname === '/guides/portable-level-2-chargers-winter') {
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-slate-50 flex items-center justify-center text-slate-500 text-sm">Loading guide…</div>}>
+        <WinterChargersGuide />
+      </Suspense>
+    );
+  }
+
   const [filters, setFilters] = useState<FilterState>({
     searchQuery: '',
     category: 'all',
